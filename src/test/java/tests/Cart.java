@@ -19,16 +19,16 @@ public class Cart extends TestBase{
 
         LoginPage loginPage = new LoginPage();
 
-        loginPage.absoluteLogin();
+        new LoginPage().loginWithValidCredentials();
         SeleniumUtils.waitFor(2);
         Assert.assertEquals(driver.getTitle(), title);
     }
     @Test(priority=2)
     public void cartMatch() throws InterruptedException {
-        LoginPage loginPage = new LoginPage();
+
         CartPage cartPage = new CartPage();
 
-        loginPage.absoluteLogin();
+        new LoginPage().loginWithValidCredentials();
         SeleniumUtils.waitFor(2);
         cartPage.cartButton();
         String expected = " Steam Table ";
@@ -38,22 +38,23 @@ public class Cart extends TestBase{
     }
      @Test(priority=3)
     public void thirdElementQuantity() throws InterruptedException {
-        LoginPage loginPage = new LoginPage();
-        CartPage cartPage = new CartPage();
 
-         loginPage.absoluteLogin();
-         SeleniumUtils.waitFor(2);
+        CartPage cartPage = new CartPage();
+         new LoginPage().loginWithValidCredentials();
+
+        // SeleniumUtils.waitFor(2);
          cartPage.cartButton();
-         cartPage.thirdEl();
+         SeleniumUtils.waitFor(2);
+         //cartPage.thirdEl();
 
     }
 
      @Test(priority=4)
     public void prices() throws InterruptedException {
-         LoginPage loginPage = new LoginPage();
-         CartPage cartPage = new CartPage();
 
-         loginPage.absoluteLogin();
+         CartPage cartPage = new CartPage();
+         new LoginPage().loginWithValidCredentials();
+
          SeleniumUtils.waitFor(2);
          cartPage.cartButton();
          cartPage.totalItemsCombined();
@@ -62,10 +63,11 @@ public class Cart extends TestBase{
 
     @Test(priority=5)
     public void checkOut() throws InterruptedException {
-        LoginPage loginPage = new LoginPage();
+
+        new LoginPage().loginWithValidCredentials();
         CartPage cartPage = new CartPage();
 
-        loginPage.absoluteLogin();
+
         SeleniumUtils.waitFor(2);
         cartPage.cartButton();
         cartPage.totalItemsCombined();
@@ -77,10 +79,11 @@ public class Cart extends TestBase{
 
     @Test(priority=6)
     public void emptyCart() throws InterruptedException {
-        LoginPage loginPage = new LoginPage();
+        new LoginPage().loginWithValidCredentials();
+
         CartPage cartPage = new CartPage();
 
-        loginPage.absoluteLogin();
+
         SeleniumUtils.waitFor(2);
         cartPage.cartButton();
         cartPage.subTotalButton();

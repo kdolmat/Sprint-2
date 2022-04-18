@@ -18,13 +18,13 @@ public class Driver {
 
     private Driver(){}
 
-
+//mvn test -DxmlFile=smoke.xml
     public static synchronized WebDriver getDriver(){
         if(drivers.get() == null){
 
             String browser =  System.getProperty("browser");
             if(browser == null){
-                browser = ConfigReader.getProperty("browser");
+                browser = PropertyReader.getProperty("browser");
             }
 
 
