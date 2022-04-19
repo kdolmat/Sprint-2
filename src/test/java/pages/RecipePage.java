@@ -7,11 +7,7 @@ import utilities.Driver;
 
 public class RecipePage {
 
-//    public WebElement recipePage = Driver.getDriver().findElement(By.cssSelector("a[href*=\"recipe_resizer.html\"]"));
-//    public WebElement recipeName = Driver.getDriver().findElement(By.name("RecipeName"));
-//    public WebElement recipeNotes = Driver.getDriver().findElement(By.xpath("//textarea[@id=\"Notes\"]"));
-//    public WebElement origServ = Driver.getDriver().findElement(By.name("OriginalServings"));
-//    public WebElement resizeServ = Driver.getDriver().findElement(By.name("ResizedServings"));
+
 
  public RecipePage() {
   PageFactory.initElements(Driver.getDriver(), this);

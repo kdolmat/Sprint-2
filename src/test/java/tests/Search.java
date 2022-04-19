@@ -37,7 +37,7 @@ public class Search extends TestBase {
         SearchPage searchPage = new SearchPage();
 
         searchPage.search.sendKeys("steam table" + Keys.ENTER);
-        //driver.findElement(By.xpath("//input[@name='searchval']")).sendKeys("steam table");
+
 
         SeleniumUtils.waitFor(3);
         String expectedText = "steam table";

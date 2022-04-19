@@ -30,7 +30,7 @@ public class RecipeTest extends TestBase {
         rp.resizeServ.sendKeys("4");
 
 
-        //Selecting radiobox and verifying if one of them selected (Metric)
+
         SeleniumUtils.waitFor(2);
 
         WebElement radio1 = driver.findElement(By.id("MeasurementSystemImperial"));

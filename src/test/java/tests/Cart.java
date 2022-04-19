@@ -30,29 +30,14 @@ public class Cart extends TestBase{
         SeleniumUtils.waitFor(3);
         SeleniumUtils.scroll(0, 250);
         new Select(searchPage.clickSort).selectByIndex(3);
-
-
-        searchPage.clickFilter.click();
-
-        // driver.findElement(By.xpath("//span[text()='Food Holding and Warming Equipment']")).click();
-
-       // driver.findElement(By.xpath("(//input[@class='btn btn-cart btn-small'])[1]")).click();
+         searchPage.clickFilter.click();
         searchPage.clickCart.click();
         SeleniumUtils.waitFor(2);
-        // driver.findElement(By.xpath("//a[@class='btn btn-small btn-primary']")).click();
-
-       searchPage.viewCart.click();
+      searchPage.viewCart.click();
         SeleniumUtils.waitFor(5);
         Thread.sleep(2000);
 
 
-//        CartPage cartPage = new CartPage();
-//
-//
-//        SeleniumUtils.waitFor(2);
-//        cartPage.cartButton();
-//        cartPage.totalItemsCombined();
-//        Assert.assertEquals(cartPage.totalItemsCombined(),cartPage.subTot());
 
     }
 
@@ -75,7 +60,7 @@ public class Cart extends TestBase{
         String expected = " Steam Table ";
         List<String>a= Arrays.asList(" Steam Table ");
         List<String> actual = SeleniumUtils.getElementsText(cartPage.cartItems);
-        // Assert.assertFalse(a.contains(actual));
+
     }
      @Test(priority=3,groups = "regression")
     public void thirdElementQuantity(){
@@ -117,7 +102,7 @@ SeleniumUtils.waitFor(2);
         SeleniumUtils.waitFor(2);
         cartPage.cartButton();
         cartPage.totalItemsCombined();
-       // Assert.assertTrue(cartPage.totalItemsCombined().equals(cartPage.subTot()));
+
         String total = cartPage.totalItemsCombined();
         cartPage.subTotalButton();
         Assert.assertEquals(total,cartPage.totAfterTaxes());
@@ -135,7 +120,7 @@ SeleniumUtils.waitFor(2);
         SeleniumUtils.waitFor(2);
         cartPage.subTotalButton();
         SeleniumUtils.waitFor(2);
-       // cartPage.goBackAndDelete();
+
 
 
     }

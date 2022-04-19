@@ -8,14 +8,7 @@ import utilities.Driver;
 
 public class NewAccountPage {
 
-    //Non-pageFactory style page object class
 
-//    public WebElement registerPage = Driver.getDriver().findElement(By.partialLinkText("Register"));
-//    public WebElement email = Driver.getDriver().findElement(By.id("email"));
-//    public WebElement password = Driver.getDriver().findElement(By.id("password"));
-
-
-    //PageFactory style
 
     public NewAccountPage() {
         PageFactory.initElements(Driver.getDriver(), this);
