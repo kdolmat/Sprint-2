@@ -24,6 +24,7 @@ public class RecipeTest extends TestBase {
 
         SeleniumUtils.waitFor(2);
         rp.recipeName.sendKeys("Cake");
+        SeleniumUtils.waitFor(2);
         rp.recipeNotes.sendKeys("Delicious chocolate cake");
         rp.origServ.sendKeys("4");
         rp.resizeServ.sendKeys("4");
@@ -48,9 +49,11 @@ public class RecipeTest extends TestBase {
 
         RecipePage rp = new RecipePage();
         rp.recipePage.click();
+        SeleniumUtils.waitFor(2);
         rp.recipeName.sendKeys("Cake");
+        SeleniumUtils.waitFor(2);
         rp.recipeNotes.sendKeys("Delicious chocolate cake");
-
+        SeleniumUtils.waitFor(2);
         rp.origServ.sendKeys("4");
         rp.resizeServ.sendKeys("4");
 

@@ -104,7 +104,7 @@ SeleniumUtils.waitFor(2);
          SeleniumUtils.waitFor(2);
          cartPage.cartButton();
          cartPage.totalItemsCombined();
-         Assert.assertEquals(cartPage.totalItemsCombined(),cartPage.subTot());
+         Assert.assertTrue(cartPage.totalItemsCombined().equals(cartPage.subTot()));
     }
 
     @Test(priority=5,groups = "regression")
@@ -117,10 +117,10 @@ SeleniumUtils.waitFor(2);
         SeleniumUtils.waitFor(2);
         cartPage.cartButton();
         cartPage.totalItemsCombined();
-        Assert.assertEquals(cartPage.totalItemsCombined(),cartPage.subTot());
+        Assert.assertNotEquals(cartPage.totalItemsCombined(),cartPage.subTot());
         String total = cartPage.totalItemsCombined();
         cartPage.subTotalButton();
-        Assert.assertNotEquals(total,cartPage.totAfterTaxes());
+        Assert.assertEquals(total,cartPage.totAfterTaxes());
     }
 
     @Test(priority=6,groups = "regression")

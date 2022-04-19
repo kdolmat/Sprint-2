@@ -63,7 +63,7 @@ public class CartPage {
             }
         }
         String priceDollar$ = String.valueOf(temp);
-        String fixed = "$"+priceDollar$.substring(0,3)+","+priceDollar$.substring(2,9);
+        String fixed = "$"+priceDollar$.substring(0,2)+","+priceDollar$.substring(2,8);
 
         return fixed;
     }

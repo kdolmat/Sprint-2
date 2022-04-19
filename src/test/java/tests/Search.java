@@ -56,6 +56,7 @@ public class Search extends TestBase {
 //        new Select(driver.findElement(By.xpath("//select[@id='make-model-maximum-distance']"))).selectByIndex(0);
         driver.get(PropertyReader.getProperty("url"));
         new LoginPage().loginWithValidCredentials();
+        SeleniumUtils.waitFor(2);
         SearchPage searchPage = new SearchPage();
         searchPage.search.sendKeys("steam table" + Keys.ENTER);
         SeleniumUtils.waitFor(3);
@@ -73,13 +74,16 @@ public class Search extends TestBase {
     public void filter() {
 
         driver.get(PropertyReader.getProperty("url"));
-        SeleniumUtils.waitFor(1);
+        SeleniumUtils.waitFor(2);
         new LoginPage().loginWithValidCredentials();
+        SeleniumUtils.waitFor(2);
         SearchPage searchPage = new SearchPage();
         searchPage.search.sendKeys("steam table" + Keys.ENTER);
-        SeleniumUtils.waitFor(3);
+
+        SeleniumUtils.waitFor(2);
         SeleniumUtils.scroll(0, 250);
         new Select(searchPage.clickSort).selectByIndex(3);
+       // searchPage.clickSort.sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ENTER);
 
 
         searchPage.clickFilter.click();
