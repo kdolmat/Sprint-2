@@ -14,14 +14,14 @@ import java.util.List;
 public class Cart extends TestBase{
 
 
-    @Test(priority=1)
+    @Test(priority=1, groups = "smoke")
     public void Login(){
 
         new LoginPage().loginWithValidCredentials();
         SeleniumUtils.waitFor(2);
         Assert.assertEquals(driver.getTitle(), title);
     }
-    @Test(priority=2)
+    @Test(priority=2,groups = "regression")
     public void cartMatch(){
         new LoginPage().loginWithValidCredentials();
         CartPage cartPage = new CartPage();
@@ -34,7 +34,7 @@ public class Cart extends TestBase{
         List<String> actual = SeleniumUtils.getElementsText(cartPage.cartItems);
         Assert.assertFalse(a.contains(actual));//doesn't match
     }
-     @Test(priority=3)
+     @Test(priority=3,groups = "regression")
     public void thirdElementQuantity(){
 
         new LoginPage().loginWithValidCredentials();
@@ -48,7 +48,7 @@ public class Cart extends TestBase{
 
     }
 
-     @Test(priority=4)
+     @Test(priority=4,groups = "regression")
     public void prices(){
          new LoginPage().loginWithValidCredentials();
          CartPage cartPage = new CartPage();
@@ -60,7 +60,7 @@ public class Cart extends TestBase{
          Assert.assertEquals(cartPage.totalItemsCombined(),cartPage.subTot());
     }
 
-    @Test(priority=5)
+    @Test(priority=5,groups = "regression")
     public void checkOut(){
 
         new LoginPage().loginWithValidCredentials();
@@ -76,7 +76,7 @@ public class Cart extends TestBase{
         Assert.assertNotEquals(total,cartPage.totAfterTaxes());
     }
 
-    @Test(priority=6)
+    @Test(priority=6,groups = "regression")
     public void emptyCart() throws InterruptedException {
         new LoginPage().loginWithValidCredentials();
 

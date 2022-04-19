@@ -14,7 +14,7 @@ import utilities.SeleniumUtils;
 
 public class RecipeTest extends TestBase {
 
-    @Test (groups = {"smoke"})
+    @Test (groups = "smoke")
    public void positiveRecipeConvert() {
         driver.get(PropertyReader.getProperty("url"));
 
@@ -42,7 +42,7 @@ public class RecipeTest extends TestBase {
         Assert.assertTrue(radio2.isSelected());
     }
 
-    @Test (groups = {"smoke"})
+    @Test (groups = "regression")
   public void negativeRecipeConvert() {
         driver.get(PropertyReader.getProperty("url"));
 
@@ -60,7 +60,7 @@ public class RecipeTest extends TestBase {
         softAssert.assertFalse("4".equals("123456789001234567890"), "Failed");
     }
 
-    @Test (groups = {"smoke"})
+    @Test (groups = "regression")
     public void negativeIngredientsQty() {
 
         driver.get(PropertyReader.getProperty("url"));
@@ -93,7 +93,7 @@ public class RecipeTest extends TestBase {
 
     }
 
-    @Test (groups = {"smoke"})
+    @Test (groups = "regression")
             public void positiveIngredientsQty(){
 
         driver.get(PropertyReader.getProperty("url"));

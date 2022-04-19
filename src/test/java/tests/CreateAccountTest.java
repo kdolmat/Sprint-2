@@ -8,7 +8,7 @@ import utilities.SeleniumUtils;
 
 public class CreateAccountTest extends TestBase {
 
-    @Test(groups = {"smoke"})
+    @Test(groups = "smoke")
     public void negativeLoginTest() {
         driver.get(PropertyReader.getProperty("url"));
 

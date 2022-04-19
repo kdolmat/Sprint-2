@@ -9,7 +9,7 @@ import utilities.SeleniumUtils;
 
 public class getTitle extends TestBase{
 
-    @Test(priority=1)
+    @Test(priority=1,groups = "regression")
     public void Login() throws InterruptedException {
 
         LoginPage loginPage = new LoginPage();

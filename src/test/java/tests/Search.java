@@ -20,7 +20,7 @@ public class Search extends TestBase {
 //        -assertTrue if the page contains keyword "steam table"
 //        -add items from 1st page to your cart+
 
-    @Test
+    @Test (priority = 1,groups = "smoke")
     public void login() {
 
 
@@ -29,7 +29,7 @@ public class Search extends TestBase {
     }
 
 
-    @Test
+    @Test (priority = 2,groups = "regression")
     public void keyword() {
         driver.get(PropertyReader.getProperty("url"));
         new LoginPage().loginWithValidCredentials();
@@ -47,7 +47,7 @@ public class Search extends TestBase {
 
     }
 
-    @Test
+    @Test (priority = 3,groups = "regression")
     public void sort() {
 //        new Select(driver.findElement(By.xpath("//select[@id='makes']"))).selectByValue("lexus");
 //
@@ -69,7 +69,7 @@ public class Search extends TestBase {
 
     }
 
-    @Test
+    @Test (priority = 4,groups = "regression")
     public void filter() {
 
         driver.get(PropertyReader.getProperty("url"));
@@ -89,7 +89,7 @@ public class Search extends TestBase {
         SeleniumUtils.waitFor(3);
     }
 
-@Test
+@Test (priority = 6,groups = "regression")
     public void Assert() {
 
         driver.get(PropertyReader.getProperty("url"));
@@ -109,7 +109,7 @@ public class Search extends TestBase {
     }
 
 
-    @Test
+    @Test (priority = 5,groups = "regression")
     public void addItem() {
 
         driver.get(PropertyReader.getProperty("url"));

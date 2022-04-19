@@ -27,7 +27,7 @@ public class Login extends TestBase {
 
     }
 
-    @Test
+    @Test(groups = "regression")
     public void incorrectUsername() {
 
         driver.get(PropertyReader.getProperty("url"));
@@ -41,7 +41,7 @@ public class Login extends TestBase {
     }
 
 
-    @Test
+    @Test(groups = "regression")
     public void incorrectPassword() {
 
         driver.get(PropertyReader.getProperty("url"));
@@ -55,7 +55,7 @@ public class Login extends TestBase {
     }
 
 
-    @Test
+    @Test(groups = "regression")
     public void loginVerifyCorrect() {
 
         driver.get(PropertyReader.getProperty("url"));
@@ -67,7 +67,7 @@ public class Login extends TestBase {
     }
 
 
-    @Test
+    @Test(groups = "smoke")
     public void logout(){
 
         driver.get(PropertyReader.getProperty("url"));
@@ -90,7 +90,7 @@ public class Login extends TestBase {
 
     }
 
-    @Test
+    @Test(groups = "smoke")
     public void loginAgain(){
 
         driver.get(PropertyReader.getProperty("url"));

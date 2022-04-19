@@ -6,7 +6,7 @@ import pages.LoginPage;
 
 public class Account extends TestBase{
 
-    @Test(priority=1)
+    @Test(priority=1, groups = "smoke")
     public void wrongLogin() throws InterruptedException {
 
         new LoginPage().loginWithValidCredentials();
