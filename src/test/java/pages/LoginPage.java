@@ -27,8 +27,11 @@ public class LoginPage {
     @FindBy(xpath = "//input[@id='the_login_button']")
     public WebElement loginButton;
 
-    @FindBy(xpath = "(//button[@type='button'])[1]")
-    public WebElement logoutClick;
+    @FindBy(xpath = "//button[@class='text-shadow-white-3 border-0 cursor-pointer block flex items-center h-full px-3 text-center text-gray-800 bg-gray-gradient-100 lt:min-w-31 xs:hover:bg-white-200 xs:hover:bg-img-none']")
+    public WebElement robinsAccount;
+
+    @FindBy(xpath = "(//a[@class='hover:bg-green-25 block font-normal text-sm leading-snug py-1 px-5 text-gray-800 no-underline hover:no-underline whitespace-no-wrap'])[6]")
+    public WebElement logout;
 
 
     public void loginWithValidCredentials(){
@@ -41,4 +44,3 @@ public class LoginPage {
     }
 
 }
-

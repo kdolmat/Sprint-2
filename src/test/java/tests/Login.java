@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import utilities.PropertyReader;
+import utilities.SeleniumUtils;
 
 public class Login extends TestBase {
     //2.login and verify
@@ -16,7 +17,7 @@ public class Login extends TestBase {
 //-log in again
 
     @Test(groups = "smoke")
-    public void Login() {
+    public void LoginVerify() {
 
         driver.get(PropertyReader.getProperty("url"));
 
@@ -34,7 +35,7 @@ public class Login extends TestBase {
         loginPage.accountClick.click();
 
         loginPage.emailAddress.sendKeys("dolmat.kirillgmail.com");
-        loginPage.password.sendKeys(PropertyReader.getProperty("pass"));
+        loginPage.password.sendKeys(PropertyReader.getProperty("password"));
         loginPage.loginButton.click();
         Assert.assertEquals(driver.getTitle(), "Sign In or Create an Account!");
     }
@@ -46,7 +47,7 @@ public class Login extends TestBase {
         driver.get(PropertyReader.getProperty("url"));
         LoginPage loginPage = new LoginPage();
         loginPage.accountClick.click();
-        loginPage.emailAddress.sendKeys(PropertyReader.getProperty("email"));
+        loginPage.emailAddress.sendKeys(PropertyReader.getProperty("password"));
         loginPage.password.sendKeys("=kjsZF6@hqLP7d");
         loginPage.loginButton.click();
         Assert.assertEquals(driver.getTitle(), "Sign In or Create an Account!");
@@ -55,18 +56,64 @@ public class Login extends TestBase {
 
 
     @Test
-    public void logOut() throws InterruptedException {
-
+    public void loginVerifyCorrect() {
 
         driver.get(PropertyReader.getProperty("url"));
 
         new LoginPage().loginWithValidCredentials();
 
-        LoginPage loginPage = new LoginPage();
 
-        loginPage.logoutClick.click();
-        Thread.sleep(2000);
+
     }
+
+
+    @Test
+    public void logout(){
+
+        driver.get(PropertyReader.getProperty("url"));
+        new LoginPage().loginWithValidCredentials();
+        LoginPage loginPage =new LoginPage();
+
+        loginPage.robinsAccount.click();
+        loginPage.logout.click();
+
+
+        SeleniumUtils.waitFor(3);
+
+        String text="Create an Account";
+
+        Assert.assertEquals(driver.getTitle(), "Sign In or Create an Account!");
+
+
+
+
+
+    }
+
+    @Test
+    public void loginAgain(){
+
+        driver.get(PropertyReader.getProperty("url"));
+        new LoginPage().loginWithValidCredentials();
+        LoginPage loginPage =new LoginPage();
+        SeleniumUtils.waitFor(2);
+        loginPage.robinsAccount.click();
+        loginPage.logout.click();
+
+
+        SeleniumUtils.waitFor(2);
+
+        String text="Create an Account";
+
+        new LoginPage().loginWithValidCredentials();
+
+        SeleniumUtils.waitFor(2);
+
+        Assert.assertEquals(driver.getCurrentUrl(), "https://www.webstaurantstore.com/myaccount");
+
+    }
+
+
 
 
 }
