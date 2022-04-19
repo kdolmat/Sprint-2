@@ -117,7 +117,7 @@ SeleniumUtils.waitFor(2);
         SeleniumUtils.waitFor(2);
         cartPage.cartButton();
         cartPage.totalItemsCombined();
-        Assert.assertNotEquals(cartPage.totalItemsCombined(),cartPage.subTot());
+        Assert.assertTrue(cartPage.totalItemsCombined().equals(cartPage.subTot()));
         String total = cartPage.totalItemsCombined();
         cartPage.subTotalButton();
         Assert.assertEquals(total,cartPage.totAfterTaxes());
