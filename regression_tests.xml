@@ -6,7 +6,7 @@
 
         <packages>
             <!--         means include all packages-->
-            <package name=".*"/>
+            <package name="tests"/>
         </packages>
 
     </test>
