@@ -75,7 +75,7 @@ public class Cart extends TestBase{
         String expected = " Steam Table ";
         List<String>a= Arrays.asList(" Steam Table ");
         List<String> actual = SeleniumUtils.getElementsText(cartPage.cartItems);
-        Assert.assertFalse(a.contains(actual));//doesn't match
+        Assert.assertFalse(a.contains(actual));
     }
      @Test(priority=3,groups = "regression")
     public void thirdElementQuantity(){
