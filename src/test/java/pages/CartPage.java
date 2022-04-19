@@ -63,7 +63,8 @@ public class CartPage {
             }
         }
         String priceDollar$ = "$"+String.valueOf(temp);
-        return priceDollar$;
+        String fixed = priceDollar$.substring(0,7);
+        return fixed;
     }
 
     public String subTot(){
