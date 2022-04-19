@@ -20,7 +20,7 @@ public class CartPage {
     @FindBy (xpath = "//span[@class='itemDescription description']")
     public static List<WebElement> cartItems;
 
-    @FindBy(xpath ="(//button[@name='quantityButtonUp'])[3]")
+    @FindBy(xpath ="(//button[@name='quantityButtonUp'])[1]")
     public WebElement thridElement;
 
     @FindBy(xpath = "//div[@class='itemTotal total']")

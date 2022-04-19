@@ -18,6 +18,8 @@ public class Driver {
 
     private Driver(){}
 
+    //mvn test -DxmlFile=regression_tests.xml
+
 //mvn test -DxmlFile=smoke.xml
     public static synchronized WebDriver getDriver(){
         if(drivers.get() == null){

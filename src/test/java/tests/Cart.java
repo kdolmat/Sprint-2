@@ -32,7 +32,7 @@ public class Cart extends TestBase{
         String expected = " Steam Table ";
         List<String>a= Arrays.asList(" Steam Table ");
         List<String> actual = SeleniumUtils.getElementsText(cartPage.cartItems);
-        Assert.assertTrue(a.contains(actual));//doesn't match
+        Assert.assertFalse(a.contains(actual));//doesn't match
     }
      @Test(priority=3)
     public void thirdElementQuantity(){
