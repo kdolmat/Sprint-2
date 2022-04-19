@@ -67,7 +67,7 @@ public class CartPage {
     }
 
     public String subTot(){
-       String subTotalText = subTotal.getText();
+        String subTotalText = subTotal.getText();
         return subTotalText;
     }
 
