@@ -109,31 +109,6 @@ public class Search extends TestBase {
     }
 
 
-    @Test (priority = 5,groups = "regression")
-    public void addItem() {
-
-        driver.get(PropertyReader.getProperty("url"));
-        SeleniumUtils.waitFor(1);
-        new LoginPage().loginWithValidCredentials();
-        SearchPage searchPage = new SearchPage();
-        searchPage.search.sendKeys("steam table" + Keys.ENTER);
-        SeleniumUtils.waitFor(3);
-        SeleniumUtils.scroll(0, 250);
-        new Select(searchPage.clickSort).selectByIndex(3);
-
-
-        searchPage.clickFilter.click();
-
-        // driver.findElement(By.xpath("//span[text()='Food Holding and Warming Equipment']")).click();
-
-        //driver.findElement(By.xpath("(//input[@class='btn btn-cart btn-small'])[1]")).click();
-        searchPage.clickCart.click();
-        SeleniumUtils.waitFor(2);
-        // driver.findElement(By.xpath("//a[@class='btn btn-small btn-primary']")).click();
-
-        searchPage.viewCart.click();
-
-    }
 
 }
 

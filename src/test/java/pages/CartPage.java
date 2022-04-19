@@ -57,13 +57,14 @@ public class CartPage {
         List<String> price = SeleniumUtils.getElementsText(prices);
         for(int i=0;i<price.size();i++){
             if(price.get(i).contains("$")){
-                noDollar$.add(price.get(i).substring(1));
+                noDollar$.add(price.get(i).replaceAll("[$,]", ""));
                 itemsPrice.add(Double.parseDouble(noDollar$.get(i)));
                 temp+= itemsPrice.get(i);
             }
         }
-        String priceDollar$ = "$"+String.valueOf(temp);
-        String fixed = priceDollar$.substring(0,7);
+        String priceDollar$ = String.valueOf(temp);
+        String fixed = "$"+priceDollar$.substring(0,3)+","+priceDollar$.substring(2,9);
+
         return fixed;
     }
 

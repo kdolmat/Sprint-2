@@ -2,23 +2,20 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="All Tests Suite">
 
-    <test name="Regression Tests" preserve-order="true">
+    <test name="UI Tests">
 
-    <groups>
-    <run>
-                <include name="regression"/>
+        <groups>
+            <run>
+                <include name="smoke"/>
             </run>
-    </groups>
-    <classes>
-                <class name="tests.Account"></class>
-                <class name="tests.Login"></class>
-                <class name="tests.Search"></class>
-                <class name="tests.Cart"></class>
-                <class name="tests.RecipeTest"></class>
-            </classes>
+        </groups>
+
+
+        <packages>
+            <!--         means include all packages-->
+            <package name="tests"/>
+        </packages>
+
     </test>
-
-
-
 
 </suite>

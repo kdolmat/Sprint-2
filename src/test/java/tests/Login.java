@@ -23,7 +23,9 @@ public class Login extends TestBase {
 
         new LoginPage().loginWithValidCredentials();
 
+
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.webstaurantstore.com/myaccount/");
+
 
     }
 
@@ -95,6 +97,7 @@ public class Login extends TestBase {
 
         driver.get(PropertyReader.getProperty("url"));
         new LoginPage().loginWithValidCredentials();
+        SeleniumUtils.waitFor(2);
         LoginPage loginPage =new LoginPage();
         SeleniumUtils.waitFor(2);
         loginPage.robinsAccount.click();
