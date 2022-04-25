@@ -64,7 +64,7 @@ public class Cart extends TestBase{
     }
      @Test(priority=3,groups = "regression")
     public void thirdElementQuantity(){
-        //mvn test -DxmlFile=regression_tests.xml
+
 SeleniumUtils.waitFor(2);
         new LoginPage().loginWithValidCredentials();
         CartPage cartPage = new CartPage();
@@ -77,7 +77,7 @@ SeleniumUtils.waitFor(2);
 
     }
 
-     @Test(priority=4,groups = "regression")
+     @Test(priority=4,groups = "yum")
 
     public void prices(){
 

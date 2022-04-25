@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="Regression Tests">
+<suite name="Regression Tests" parallel="classes" thread-count="4">
 
     <test name="UI Tests">
         <groups>
