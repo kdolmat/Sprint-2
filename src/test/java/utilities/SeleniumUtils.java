@@ -76,4 +76,6 @@ public class SeleniumUtils {
     public static void uploadFile(By chooseFileButton, String pathToAFileToBeUploaded ) {
         Driver.getDriver().findElement(chooseFileButton).sendKeys(pathToAFileToBeUploaded);
     }
+
+
 }

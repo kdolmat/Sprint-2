@@ -77,7 +77,7 @@ SeleniumUtils.waitFor(2);
 
     }
 
-     @Test(priority=4,groups = "yum")
+     @Test(priority=4,groups = "smoke")
 
     public void prices(){
 

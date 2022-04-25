@@ -23,6 +23,7 @@ public class TestBase {
     protected static ExtentSparkReporter htmlReport;
     protected static ExtentTest logger;
     public String title = PropertyReader.getProperty("title");
+    public String couponsURL = PropertyReader.getProperty("couponsUrl");
 
     @BeforeSuite(alwaysRun = true)
     public void setupReport(){
