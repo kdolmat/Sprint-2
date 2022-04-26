@@ -31,8 +31,8 @@ public class CareerTest extends TestBase {
         cp.Dev.click();
     }
 
-        @Test
-        public void JobPosition() {
+    @Test
+    public void JobPosition() {
         logger.info("Navigate to url");
         driver.get(PropertyReader.getProperty("url"));
         CareerPage cp = new CareerPage();
@@ -45,16 +45,16 @@ public class CareerTest extends TestBase {
         WebElement position = driver.findElement(By.partialLinkText("QA Automation Engineer (Remote)"));
         SeleniumUtils.waitFor(2);
         ac.moveToElement(position).click();
-        }
+    }
 
-        @Test
-    public void StartYourCareer(){
+    @Test
+    public void StartYourCareer() {
         logger.info("Navigate to url");
         driver.get(PropertyReader.getProperty("url"));
         CareerPage cp = new CareerPage();
         cp.careerPage.click();
 
-        SeleniumUtils.scroll(1,1400);
+        SeleniumUtils.scroll(1, 1400);
         SeleniumUtils.waitFor(2);
         cp.Play.click();
 
@@ -71,58 +71,77 @@ public class CareerTest extends TestBase {
         Assert.assertFalse(cp.videoName.equals(expectedVideoname));
 
 
-      }
+    }
 
-   @Test
-   public void choosePosition(){
-       logger.info("Navigate to url");
-       driver.get(PropertyReader.getProperty("url"));
-       CareerPage cp = new CareerPage();
-       cp.careerPage.click();
-       SeleniumUtils.waitFor(2);
-       cp.StatePosition.click();
-       cp.Dev.click();
+    @Test
+    public void choosePosition() {
+        logger.info("Navigate to url");
+        driver.get(PropertyReader.getProperty("url"));
+        CareerPage cp = new CareerPage();
+        cp.careerPage.click();
+        SeleniumUtils.waitFor(2);
+        cp.StatePosition.click();
+        cp.Dev.click();
 
-       cp.firstPosition.click();
+        cp.firstPosition.click();
 
-       SeleniumUtils.switchToWindow("Accessibility Engineer (Remote Friendly) | Tampa, FL | WebstaurantStore Careers");
+        SeleniumUtils.switchToWindow("Accessibility Engineer (Remote Friendly) | Tampa, FL | WebstaurantStore Careers");
 
-       cp.apply.click();
+        cp.apply.click();
 
-       //driver.findElement(By.partialLinkText("I am applying for:"));
+        //driver.findElement(By.partialLinkText("I am applying for:"));
 
-       cp.firstName.sendKeys("John");
-       SeleniumUtils.waitFor(2);
-       cp.lastName.sendKeys("Depp");
-       SeleniumUtils.waitFor(2);
-       cp.address.sendKeys("123 Main str");
-       SeleniumUtils.waitFor(2);
-       cp.confirmAddress.sendKeys("123 Main str");
-       cp.zip.sendKeys("11111");
-       cp.email.sendKeys("florida@yahoo.com");
-       SeleniumUtils.waitFor(2);
-       cp.phone.sendKeys("9177198766");
-       cp.education.sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
-       SeleniumUtils.waitFor(2);
-       cp.yes.isSelected();
-       SeleniumUtils.waitFor(2);
-       cp.immigration.isSelected();
-       cp.crime.isSelected();
-       SeleniumUtils.waitFor(2);
-       cp.referral.sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ENTER);
-       cp.submit.click();
-       SeleniumUtils.waitFor(2);
+        cp.firstName.sendKeys("John");
+        SeleniumUtils.waitFor(2);
+        cp.lastName.sendKeys("Depp");
+        SeleniumUtils.waitFor(2);
+        cp.address.sendKeys("123 Main str");
+        SeleniumUtils.waitFor(2);
+        cp.confirmAddress.sendKeys("123 Main str");
+        cp.zip.sendKeys("11111");
+        cp.email.sendKeys("florida@yahoo.com");
+        SeleniumUtils.waitFor(2);
+        cp.phone.sendKeys("9177198766");
+        cp.education.sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
+        SeleniumUtils.waitFor(2);
+        cp.yes.isSelected();
+        SeleniumUtils.waitFor(2);
+        cp.immigration.isSelected();
+        cp.crime.isSelected();
+        SeleniumUtils.waitFor(2);
+        cp.referral.sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ENTER);
+        cp.submit.click();
+        SeleniumUtils.waitFor(2);
 
-       String text = "We're sorry, there was a problem submitting your application. Please enter the fields below in red and resubmit.";
-       WebElement actual = driver.findElement(By.id("client-side-error-message"));
+        String text = "We're sorry, there was a problem submitting your application. Please enter the fields below in red and resubmit.";
+        WebElement actual = driver.findElement(By.id("client-side-error-message"));
 
-       Assert.assertTrue(actual.getText().contains(text));
+        Assert.assertTrue(actual.getText().contains(text));
 
-   }
+    }
 
-   }
+    @Test
+    public void WebstaurantStore() {
+        logger.info("Navigate to url");
+        driver.get(PropertyReader.getProperty("url"));
+        CareerPage cp = new CareerPage();
+        cp.careerPage.click();
+        SeleniumUtils.waitFor(2);
 
+        SeleniumUtils.scroll(1, 6600);
 
+        SeleniumUtils.waitFor(2);
+        driver.findElement(By.xpath("//a[@class=\"careers-footer-logo\"]")).click();
+
+        SeleniumUtils.switchToWindow("WebstaurantStore: Restaurant Supplies & Foodservice Equipment");
+        String text = "WebstaurantStore: Restaurant Supplies & Foodservice Equipment";
+
+        SeleniumUtils.waitFor(2);
+        Assert.assertTrue(driver.getTitle().contains(text));
+
+    }
+
+}
 
 
 
