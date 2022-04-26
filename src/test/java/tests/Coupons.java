@@ -3,10 +3,7 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import pages.CartPage;
 import pages.CouponsPage;
-import pages.LoginPage;
-import utilities.SeleniumUtils;
 
 public class Coupons extends TestBase{
 
