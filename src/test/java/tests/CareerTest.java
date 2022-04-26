@@ -14,7 +14,7 @@ import java.util.Set;
 
 public class CareerTest extends TestBase {
 
-    @Test
+    @Test(groups = "smoke")
     public void searchForJob() {
 
         logger.info("Navigate to url");

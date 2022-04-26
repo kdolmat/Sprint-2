@@ -15,7 +15,7 @@ public class Driver {
 
     private static ThreadLocal<WebDriver> drivers = new ThreadLocal<>();
 
-
+//mvn test -DxmlFile=smoke_parallel.xml
     private Driver(){}
 
 

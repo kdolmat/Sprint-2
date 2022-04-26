@@ -3,8 +3,14 @@
 
 <suite name = "All Test Suite">
 
-    <test name = "UI Tests">
 
+    <test name="UI Tests">
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+
+        </groups>
         <packages>
 
             <package name=".*"></package>

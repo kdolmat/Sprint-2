@@ -19,7 +19,7 @@ import pages.Cart;
 public class Blog extends TestBase {
 
 
-    @Test
+    @Test(groups = "smoke")
     public void test1() {
 
 

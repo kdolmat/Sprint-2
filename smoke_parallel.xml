@@ -5,11 +5,12 @@
     <test name="UI Tests">
         <groups>
             <run>
-                <include name="yum"/>
+                <include name="smoke"/>
             </run>
 
         </groups>
-        <packages>
+
+       <packages>
 
             <package name=".*"></package>
 

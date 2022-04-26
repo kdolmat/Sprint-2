@@ -8,7 +8,7 @@ import pages.CouponsPage;
 public class Coupons extends TestBase{
 
     CouponsPage couponsPage = new CouponsPage();
-    CartPage cartPage = new CartPage();
+    //CartPage cartPage = new CartPage();
 
     @DataProvider
     public Object[][] coupon(){
@@ -17,7 +17,7 @@ public class Coupons extends TestBase{
                };
     }
 
-    @Test(priority = 0, groups = "regression")
+    @Test(priority = 0, groups = "smoke")
     public void couponButton(){
 
         couponsPage.scrollToCoupons();
