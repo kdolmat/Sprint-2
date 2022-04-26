@@ -7,13 +7,9 @@ import utilities.SeleniumUtils;
 
 public class Coupons extends TestBase{
 
-    CouponsPage couponsPage = new CouponsPage();
-
-
-
     @Test(groups = "smoke")
     public void couponButton(){
-
+        CouponsPage couponsPage = new CouponsPage();
         logger.info("navigate to and click coupon button");
         couponsPage.scrollToCoupons();
         SeleniumUtils.waitFor(2);
@@ -22,6 +18,7 @@ public class Coupons extends TestBase{
 
     @Test(groups = "regression")
     public void couponPull(){
+        CouponsPage couponsPage = new CouponsPage();
         logger.info("navigate to url and check coupon buttons");
         couponsPage.scrollToCoupons();
         couponsPage.HotButtonClick();
@@ -32,6 +29,7 @@ public class Coupons extends TestBase{
 
     @Test(groups = "regression")
     public void addItemFromCoupn(){
+        CouponsPage couponsPage = new CouponsPage();
         logger.info("navigate to url and add items");
         couponsPage.scrollToCoupons();
         SeleniumUtils.waitFor(2);
@@ -45,6 +43,7 @@ public class Coupons extends TestBase{
 
     @Test(groups = "regression")
     public void applyCoupon(){
+        CouponsPage couponsPage = new CouponsPage();
         logger.info("navigate to url and add items");
         couponsPage.scrollToCoupons();
         String coupon = couponsPage.actualCoupon();
@@ -65,6 +64,7 @@ public class Coupons extends TestBase{
 
     @Test(groups = "regression")
     public void checkTheDifference(){
+        CouponsPage couponsPage = new CouponsPage();
         logger.info("navigate to url and add items");
         couponsPage.scrollToCoupons();
         String coupon = couponsPage.actualCoupon();
