@@ -11,6 +11,8 @@ public class Coupons extends TestBase{
     public void couponButton(){
         CouponsPage couponsPage = new CouponsPage();
         logger.info("navigate to and click coupon button");
+
+        SeleniumUtils.waitFor(2);
         couponsPage.scrollToCoupons();
         SeleniumUtils.waitFor(2);
         Assert.assertTrue(driver.getCurrentUrl().equals(couponsURL));
@@ -20,6 +22,7 @@ public class Coupons extends TestBase{
     public void couponPull(){
         CouponsPage couponsPage = new CouponsPage();
         logger.info("navigate to url and check coupon buttons");
+        SeleniumUtils.waitFor(2);
         couponsPage.scrollToCoupons();
         couponsPage.HotButtonClick();
         SeleniumUtils.switchToWindow("Cholula Hot Sauce & Seasonings - On Sale All Week!");
@@ -31,6 +34,7 @@ public class Coupons extends TestBase{
     public void addItemFromCoupn(){
         CouponsPage couponsPage = new CouponsPage();
         logger.info("navigate to url and add items");
+        SeleniumUtils.waitFor(2);
         couponsPage.scrollToCoupons();
         SeleniumUtils.waitFor(2);
         SeleniumUtils.scroll(1,500);
@@ -45,6 +49,7 @@ public class Coupons extends TestBase{
     public void applyCoupon(){
         CouponsPage couponsPage = new CouponsPage();
         logger.info("navigate to url and add items");
+        SeleniumUtils.waitFor(2);
         couponsPage.scrollToCoupons();
         String coupon = couponsPage.actualCoupon();
         logger.info("add item");
@@ -66,6 +71,7 @@ public class Coupons extends TestBase{
     public void checkTheDifference(){
         CouponsPage couponsPage = new CouponsPage();
         logger.info("navigate to url and add items");
+        SeleniumUtils.waitFor(2);
         couponsPage.scrollToCoupons();
         String coupon = couponsPage.actualCoupon();
         logger.info("add item");
