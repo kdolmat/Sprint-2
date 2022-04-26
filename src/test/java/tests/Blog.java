@@ -1,8 +1,6 @@
 package tests;
 
 
-
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -23,7 +21,7 @@ public class Blog extends TestBase {
     public void test1() {
 
 
-logger.info("navigate to url");
+        logger.info("navigate to url");
         driver.get(PropertyReader.getProperty("url"));
         BlogPage blogPage = new BlogPage();
         SeleniumUtils.scroll(0, 2500);
@@ -32,13 +30,6 @@ logger.info("navigate to url");
 
         SeleniumUtils.hover(blogPage.easter);
         Actions act = new Actions(driver);
-        //  act.moveToElement(driver.findElement(By.xpath("(//a[@class='col-xs-4 post-preview'])[1]"))).clickAndHold().build().perform();
-//        SeleniumUtils.waitFor(3);
-//     act.moveToElement(driver.findElement(By.xpath("(//a[@class='col-xs-6 col-xs-3 post-preview'])[1]"))).clickAndHold().build().perform();
-//        SeleniumUtils.waitFor(3);
-//        act.moveToElement(driver.findElement(By.xpath("(//a[@class='col-xs-6 col-xs-3 post-preview'])[4]"))).clickAndHold().build().perform();
-
-
         act.moveToElement(blogPage.easter).clickAndHold().build().perform();
         SeleniumUtils.waitFor(3);
         act.moveToElement(blogPage.holiday).clickAndHold().build().perform();
@@ -47,12 +38,6 @@ logger.info("navigate to url");
         logger.info("check url");
         String title = "WebstaurantStore Blog: Trends, Resources, How-Tos, & More";
         Assert.assertEquals(driver.getTitle(), title);
-
-
-
-
-//        Assert.assertTrue(driver.getTitle().contains("Blog"));
-//        Assert.assertFalse(driver.getTitle().contains("Ziya"));
 
 
     }
@@ -69,9 +54,6 @@ logger.info("navigate to url");
         blogPage.BlogClick.click();
 
 
-
-        //driver.findElement(By.xpath("//a[.='Shop All Air Curtains']")).click();
-
         blogPage.shopCurtains.click();
 
 //        Set<String> windowHandles = driver.getWindowHandles();
@@ -84,10 +66,12 @@ logger.info("navigate to url");
         //  driver.findElement(By.xpath("//input[@name='searchval']")).sendKeys("abddf");
         SeleniumUtils.waitFor(5);
         logger.info("swtich to window");
+
+
         SeleniumUtils.switchToWindow("Commercial Air Curtains & Air Doors - WebstaurantStore");
-        // driver.findElement(By.xpath("//input[@name='searchval']")).sendKeys("abddf");
-        AirCurtains airCurtains=new AirCurtains();
-        //driver.findElement(By.xpath("//input[@id='searchval']")).sendKeys("air curtain cooler" + Keys.ENTER);
+
+        AirCurtains airCurtains = new AirCurtains();
+
         logger.info("send kesy air curtain cooler");
         airCurtains.search.sendKeys("air curtain cooler" + Keys.ENTER);
 
@@ -100,23 +84,22 @@ logger.info("navigate to url");
     public void test3() {
 
 
-
         driver.get(PropertyReader.getProperty("url"));
         BlogPage blogPage = new BlogPage();
         SeleniumUtils.scroll(0, 2500);
         blogPage.BlogClick.click();
         blogPage.shopCurtains.click();
         SeleniumUtils.switchToWindow("Commercial Air Curtains & Air Doors - WebstaurantStore");
-        AirCurtains airCurtains=new AirCurtains();
+        AirCurtains airCurtains = new AirCurtains();
         airCurtains.search.sendKeys("air curtain cooler" + Keys.ENTER);
-SeleniumUtils.waitFor(3);
+        SeleniumUtils.waitFor(3);
         driver.findElement(By.xpath("(//input[@value='Add to Cart'])[1]")).click();
 
 
         logger.info("scroll the page");
         SeleniumUtils.scroll(0, 250);
 
-        //SeleniumUtils.jsClick(driver.findElement(By.xpath("//a[@class='btn btn-small btn-primary']")));
+
         SeleniumUtils.jsClick(airCurtains.javaclick);
         SeleniumUtils.waitFor(3);
 
@@ -134,21 +117,21 @@ SeleniumUtils.waitFor(3);
         blogPage.shopCurtains.click();
         SeleniumUtils.waitFor(3);
         SeleniumUtils.switchToWindow("Commercial Air Curtains & Air Doors - WebstaurantStore");
-        AirCurtains airCurtains=new AirCurtains();
+        AirCurtains airCurtains = new AirCurtains();
         SeleniumUtils.waitFor(2);
         airCurtains.search.sendKeys("air curtain cooler" + Keys.ENTER);
-SeleniumUtils.waitFor(2);
+        SeleniumUtils.waitFor(2);
         driver.findElement(By.xpath("(//input[@value='Add to Cart'])[1]")).click();
 
         SeleniumUtils.scroll(0, 250);
 
-logger.info("javaClick");
+        logger.info("javaClick");
         SeleniumUtils.jsClick(airCurtains.javaclick);
         SeleniumUtils.waitFor(3);
 
         SeleniumUtils.scroll(0, 450);
 
-        Cart cart =new Cart();
+        Cart cart = new Cart();
 
 
         new Select(cart.ships).selectByIndex(1);
@@ -164,13 +147,10 @@ logger.info("javaClick");
         Assert.assertEquals(driver.getTitle(), title);
 
 
-
-
     }
 
     @Test
     public void test5() {
-
 
 
         driver.get(PropertyReader.getProperty("url"));
@@ -179,7 +159,7 @@ logger.info("javaClick");
         blogPage.BlogClick.click();
         blogPage.shopCurtains.click();
         SeleniumUtils.switchToWindow("Commercial Air Curtains & Air Doors - WebstaurantStore");
-        AirCurtains airCurtains=new AirCurtains();
+        AirCurtains airCurtains = new AirCurtains();
         airCurtains.search.sendKeys("air curtain cooler" + Keys.ENTER);
 
         driver.findElement(By.xpath("(//input[@value='Add to Cart'])[1]")).click();
@@ -192,8 +172,8 @@ logger.info("javaClick");
 
         SeleniumUtils.scroll(0, 450);
 
-       // Cart cart =new Cart();
-        Cart cart =new Cart();
+
+        Cart cart = new Cart();
 
 
         new Select(cart.ships).selectByIndex(1);
@@ -203,17 +183,12 @@ logger.info("javaClick");
 
         cart.click.click();
         SeleniumUtils.waitFor(3);
-//
-//        String title = "WebstaurantStore Cart";
-//        Assert.assertEquals(driver.getTitle(), title);
 
-
-       // driver.findElement(By.xpath("//button[@class='standardCheckoutButton btn btn-checkout btn-block btn-large clears']")).click();
 
         logger.info("click to checkout");
         cart.check.click();
         SeleniumUtils.waitFor(3);
 
 
-}
+    }
 }
